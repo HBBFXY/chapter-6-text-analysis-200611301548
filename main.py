@@ -10,7 +10,16 @@ def analyze_text(text):
     返回:
     list - 按字符频率降序排列的字符列表
     """
-    # 在此处增加代码
+      # 统计字符频率
+    char_count = {}
+    for char in text:
+        if char in char_count:
+            char_count[char] += 1
+        else:
+            char_count[char] = 1
+    # 按频率降序排序，返回格式为 [(字符, 频率), ...]
+    sorted_chars = sorted(char_count.items(), key=lambda x: x[1], reverse=True)
+    return sorted_chars
     
 
 # 主程序，已完整
